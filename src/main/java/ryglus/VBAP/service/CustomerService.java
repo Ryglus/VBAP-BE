@@ -3,6 +3,7 @@ package ryglus.VBAP.service;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 import ryglus.VBAP.DTO.user.CustomerLoginRequestDto;
 import ryglus.VBAP.DTO.user.CustomerLoginResponseDto;
 import ryglus.VBAP.DTO.user.CustomerRegisterRequestDto;
@@ -11,6 +12,7 @@ import ryglus.VBAP.model.Customer;
 import ryglus.VBAP.repository.CustomerRepository;
 import ryglus.VBAP.utils.JwtTokenUtil;
 
+@Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
     private final JwtUserDetailsService jwtUserDetailsService;
@@ -33,10 +35,14 @@ public class CustomerService {
     }
 
     public CustomerRegisterResponseDto register(CustomerRegisterRequestDto customerRegisterRequestDto) {
+        if (customerRegisterRequestDto.getUsername() == null) {
+            throw new RuntimeException("Username cannot be null");
+        }
+
         Customer customer = Customer.builder()
                 .name(customerRegisterRequestDto.getName())
                 .address(customerRegisterRequestDto.getAddress())
-                .email(customerRegisterRequestDto.getEmail())
+                .username(customerRegisterRequestDto.getUsername()) // Set username
                 .passwordHash(passwordEncoder.encode(customerRegisterRequestDto.getPassword())) // Assuming password is already hashed
                 .build();
 
@@ -46,7 +52,7 @@ public class CustomerService {
                 createdCustomer.getId(),
                 createdCustomer.getName(),
                 createdCustomer.getAddress(),
-                createdCustomer.getEmail()
+                createdCustomer.getUsername()
         );
     }
 

@@ -52,6 +52,7 @@ public class SecurityConfiguration {
     @Bean
     @Deprecated
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+        /*
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
@@ -59,6 +60,7 @@ public class SecurityConfiguration {
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+*/
         return httpSecurity.build();
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @ToString(onlyExplicitlyIncluded = true)
 @Entity
-public class Order {
+public class CustomerOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
