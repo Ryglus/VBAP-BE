@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0776d6e2-9809-4702-b93d-7f7ee6640f02" name="Changes" comment="hodne">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/categories/CategoryAddProductsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/categories/CategoryCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/products/ProductCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/products/ProductResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/products/ProductUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/CustomerOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/CustomerOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
@@ -14,21 +21,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/user/CustomerRegisterRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/user/CustomerRegisterRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/user/CustomerRegisterResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/DTO/user/CustomerRegisterResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/config/jwt/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/config/jwt/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/CustomerOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/CustomerOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/CustomerOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/CustomerOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/CustomerOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/repository/readmen.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/utils/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ryglus/VBAP/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,35 +85,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jirka/IdeaProjects/VBAP/src/main/java/ryglus/VBAP/DTO/user",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jirka/IdeaProjects/VBAP/src/main/java/ryglus/VBAP/DTO/user&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jirka\IdeaProjects\VBAP\src\main\java\ryglus\VBAP\DTO\user" />
       <recent name="C:\Users\jirka\IdeaProjects\VBAP\src\main\resources" />
       <recent name="C:\Users\jirka\IdeaProjects\VBAP\src\main\java\ryglus\VBAP\repository" />
+      <recent name="C:\Users\jirka\IdeaProjects\VBAP\src\main\java\ryglus\VBAP" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jirka\IdeaProjects\VBAP\src\main\java\ryglus\VBAP" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -115,7 +126,22 @@
       <recent name="ryglus.VBAP.config.jwt" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VbapApplication">
+    <configuration name="generated-requests | Create a new category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="Create a new category" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | Create a new product" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="Create a new product" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | Get all orders for a customer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="7" requestIdentifier="Get all orders for a customer" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | Login a customer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="10" requestIdentifier="Login a customer" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | Register a new customer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="9" requestIdentifier="Register a new customer" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="VbapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="VBAP.main" />
@@ -124,6 +150,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | Create a new product" />
+        <item itemvalue="HTTP Request.generated-requests | Create a new category" />
+        <item itemvalue="HTTP Request.generated-requests | Login a customer" />
+        <item itemvalue="HTTP Request.generated-requests | Get all orders for a customer" />
+        <item itemvalue="HTTP Request.generated-requests | Register a new customer" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -136,6 +171,8 @@
       <workItem from="1707406521150" duration="8014000" />
       <workItem from="1707416572882" duration="811000" />
       <workItem from="1707417561812" duration="9488000" />
+      <workItem from="1707469462890" duration="4299000" />
+      <workItem from="1707501682181" duration="8020000" />
     </task>
     <task id="LOCAL-00001" summary="progress- current error">
       <option name="closed" value="true" />

@@ -25,10 +25,11 @@ repositories {
 dependencies {
 	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0"
 
+	implementation 'jakarta.servlet:jakarta.servlet-api:4.0.3'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+
 	implementation 'org.springframework.boot:spring-boot-starter-reactor-netty'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 

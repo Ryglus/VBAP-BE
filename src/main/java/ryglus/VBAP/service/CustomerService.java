@@ -59,9 +59,9 @@ public class CustomerService {
     public CustomerLoginResponseDto login(CustomerLoginRequestDto customerLoginRequestDto) {
         Customer foundCustomer = jwtUserDetailsService.getUserByUsername(customerLoginRequestDto.getUsername());
 
-        if (foundCustomer != null && foundCustomer.getPasswordHash().equals(customerLoginRequestDto.getPassword())) {
+        if (passwordEncoder.matches(customerLoginRequestDto.getPassword(), foundCustomer.getPasswordHash())) {
             String token = jwtTokenUtil.generateToken(foundCustomer);
-            return new CustomerLoginResponseDto(token, foundCustomer.getId(), foundCustomer.getEmail());
+            return new CustomerLoginResponseDto(token, foundCustomer.getId(), foundCustomer.getUsername());
         } else {
             throw new RuntimeException("Invalid email or password");
         }

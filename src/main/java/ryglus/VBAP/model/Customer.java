@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -29,6 +30,9 @@ public class Customer implements UserDetails {
     private int jwtVersion;
 
     private String passwordHash; // Password hash for JWT authentication
+
+    @OneToMany(mappedBy = "customer")
+    private List<CustomerOrder> orders;
 
     // Implementing UserDetails methods
     @Override

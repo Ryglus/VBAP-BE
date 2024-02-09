@@ -20,6 +20,9 @@ public class CustomerOrder {
     private Date orderDate;
     private String status;
 
+    @ManyToOne
+    private Customer customer;
+
     @ManyToMany
     private List<Product> products;
 }

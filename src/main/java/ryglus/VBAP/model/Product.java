@@ -1,5 +1,6 @@
 package ryglus.VBAP.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,5 +21,6 @@ public class Product {
     private boolean available;
 
     @ManyToOne
-    private Category category;
+    @JsonBackReference
+    private Category category; // Add this line
 }

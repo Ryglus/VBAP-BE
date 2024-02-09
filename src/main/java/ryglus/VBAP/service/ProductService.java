@@ -17,14 +17,28 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-
     private final CategoryRepository categoryRepository;
+
     @Autowired
-    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) { // Modify this line
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) {
         this.productRepository = productRepository;
-        this.categoryRepository = categoryRepository; // Add this line
+        this.categoryRepository = categoryRepository;
     }
 
+    public Product createProduct(Product product) {
+        Category category = product.getCategory();
+        if (category == null || category.getId() == null) {
+            throw new RuntimeException("Category not found");
+        }
+        category = categoryRepository.findById(category.getId())
+                .orElseThrow(() -> new RuntimeException("Category not found"));
+        product.setCategory(category);
+        return productRepository.save(product);
+    }
+    public Category getCategoryById(Long categoryId) {
+        return categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new RuntimeException("Category not found"));
+    }
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
@@ -34,15 +48,12 @@ public class ProductService {
         return product.orElseThrow(() -> new RuntimeException("Product not found"));
     }
 
-    public Product createProduct(Product product) {
-        return productRepository.save(product);
-    }
 
     public Product updateProduct(Long id, Product productDetails) {
         Product product = getProductById(id);
         product.setName(productDetails.getName());
         product.setPrice(productDetails.getPrice());
-        // add other fields that you want to update
+
         return productRepository.save(product);
     }
 
