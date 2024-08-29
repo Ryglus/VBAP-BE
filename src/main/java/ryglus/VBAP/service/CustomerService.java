@@ -12,6 +12,8 @@ import ryglus.VBAP.model.Customer;
 import ryglus.VBAP.repository.CustomerRepository;
 import ryglus.VBAP.utils.JwtTokenUtil;
 
+import java.util.Optional;
+
 @Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
@@ -55,7 +57,10 @@ public class CustomerService {
                 createdCustomer.getUsername()
         );
     }
-
+    public Optional<Customer> getCustomerFromJwtToken(String jwtToken) {
+        String username = jwtTokenUtil.getUsernameFromToken(jwtToken);
+        return customerRepository.findByUsername(username);
+    }
     public CustomerLoginResponseDto login(CustomerLoginRequestDto customerLoginRequestDto) {
         Customer foundCustomer = jwtUserDetailsService.getUserByUsername(customerLoginRequestDto.getUsername());
 

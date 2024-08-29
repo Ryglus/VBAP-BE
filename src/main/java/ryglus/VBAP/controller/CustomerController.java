@@ -7,7 +7,11 @@ import ryglus.VBAP.DTO.user.CustomerLoginRequestDto;
 import ryglus.VBAP.DTO.user.CustomerLoginResponseDto;
 import ryglus.VBAP.DTO.user.CustomerRegisterRequestDto;
 import ryglus.VBAP.DTO.user.CustomerRegisterResponseDto;
+import ryglus.VBAP.model.Customer;
 import ryglus.VBAP.service.CustomerService;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -20,6 +24,13 @@ public class CustomerController {
         this.appUserService = appUserService;
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<Optional<Customer>> getCustomerInfo(HttpServletRequest request) {
+        String requestTokenHeader = request.getHeader("Authorization");
+        String jwtToken = requestTokenHeader.substring(7);
+        Optional<Customer> customer = appUserService.getCustomerFromJwtToken(jwtToken);
+        return ResponseEntity.ok(customer);
+    }
     @PostMapping("/signup")
     public ResponseEntity<CustomerRegisterResponseDto> register(@RequestBody CustomerRegisterRequestDto appUserRegisterRequestDto) {
         return ResponseEntity.ok(appUserService.register(appUserRegisterRequestDto));
