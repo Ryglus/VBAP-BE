@@ -1,5 +1,6 @@
 package ryglus.VBAP.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -31,7 +32,8 @@ public class Customer implements UserDetails {
 
     private String passwordHash; // Password hash for JWT authentication
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore  // Prevent infinite recursion when serializing to JSON
     private List<CustomerOrder> orders;
 
     // Implementing UserDetails methods

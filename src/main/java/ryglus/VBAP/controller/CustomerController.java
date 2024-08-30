@@ -1,17 +1,18 @@
 package ryglus.VBAP.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import ryglus.VBAP.DTO.customers.CustomerDTO;
 import ryglus.VBAP.DTO.user.CustomerLoginRequestDto;
 import ryglus.VBAP.DTO.user.CustomerLoginResponseDto;
 import ryglus.VBAP.DTO.user.CustomerRegisterRequestDto;
 import ryglus.VBAP.DTO.user.CustomerRegisterResponseDto;
 import ryglus.VBAP.model.Customer;
 import ryglus.VBAP.service.CustomerService;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -25,11 +26,11 @@ public class CustomerController {
     }
 
     @GetMapping("/me")
-    public ResponseEntity<Optional<Customer>> getCustomerInfo(HttpServletRequest request) {
-        String requestTokenHeader = request.getHeader("Authorization");
-        String jwtToken = requestTokenHeader.substring(7);
-        Optional<Customer> customer = appUserService.getCustomerFromJwtToken(jwtToken);
-        return ResponseEntity.ok(customer);
+    @Operation(summary = "Get info about account", security = @SecurityRequirement(name = "bearerAuth"))
+    public ResponseEntity<CustomerDTO> getCustomerInfo() {
+        Customer authenticatedCustomer = (Customer) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        return ResponseEntity.ok(appUserService.whoAmI(authenticatedCustomer));
     }
     @PostMapping("/signup")
     public ResponseEntity<CustomerRegisterResponseDto> register(@RequestBody CustomerRegisterRequestDto appUserRegisterRequestDto) {

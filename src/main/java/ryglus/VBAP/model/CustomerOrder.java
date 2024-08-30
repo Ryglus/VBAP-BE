@@ -20,9 +20,11 @@ public class CustomerOrder {
     private Date orderDate;
     private String status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToMany
     private List<Product> products;
 }
+
